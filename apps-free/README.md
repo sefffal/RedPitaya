@@ -32,7 +32,37 @@ These applications have a slightly different structure in the src directory.
 | `apps_name/src/external/kiss_fft` | Fast fourier transform directory; kiss distribution.
 
 
-# Build process
+# Build process -- On Red Pitaya
+
+Clone this repository
+```bash
+git clone https://github.com/sefffal/RedPitaya.git
+```
+
+Enter the apps-free directory
+```bash
+cd RedPitaya/apps-free
+```
+
+Make the filesystem rewriteable
+```bash
+rw
+```
+
+Build all the applications
+```bash
+make INSTALL_DIR=/opt/redpitaya
+```
+Instead of the previous step, you can also move to one of the subdirectories and run it to only build one particular application
+
+Install the applications you just built
+```
+make install INSTALL_DIR=/opt/redpitaya
+```
+
+
+
+# Build process -- Cross Compile
 
 Before building the applications, you need or should set your working environment.
 
